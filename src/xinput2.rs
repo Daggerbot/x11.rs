@@ -21,6 +21,10 @@ pub fn XIMaskIsSet(mask: &[::std::os::raw::c_uchar], event: i32) -> bool {
     (mask[mask_byte(event)] & (1 << (event & 7))) != 0
 }
 
+pub fn XIMaskLen(event: i32) -> usize {
+    mask_byte(event) + 1
+}
+
 //
 // functions
 //
